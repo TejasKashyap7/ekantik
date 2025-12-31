@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual envs
+venv/
+.env/
+.conda/
+
+# Models (VERY IMPORTANT)
+*.gguf
+*.bin
+*.safetensors
+
+# LLM / cache
+.cache/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
