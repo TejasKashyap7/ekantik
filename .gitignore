@@ -14,10 +14,23 @@ venv/
 *.gguf
 *.bin
 *.safetensors
+# transcripts
+transcripts
+temp
+
+# zip files
+*.zip
+
+# DB
+vector_DB
+chroma_db
+chroma_db2
+
 
 # LLM / cache
 .cache/
 logs/
+embedding_model
 
 # OS
 .DS_Store
