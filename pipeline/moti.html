@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nishtha Ji the Moti Calculator</title>
+
+  <style>
+    body {
+      font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #ff4d88;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-size: 16px;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 2px solid #ffb3d9;
+      outline: none;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #ff4d88;
+    }
+
+    .result {
+      font-size: 32px;
+      font-weight: bold;
+      color: #4CAF50;
+      margin-top: 20px;
+    }
+
+    .emoji {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Pagal Moti  ✨</h1>
+  <h2>Put number → magic happens 🪄</h2>
+
+  <div class="container">
+
+    <!-- Input -->
+    <div class="box">
+      <div class="emoji">🧮</div>
+      <label>Type a number like <b>4.56</b></label>
+      <input
+        type="text"
+        id="inputValue"
+        oninput="calculate()"
+        placeholder="4.56"
+      >
+    </div>
+
+    <!-- Output -->
+    <div class="box">
+      <div class="emoji">🎉</div>
+      <label>Your Answer</label>
+      <div class="result" id="output">—</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Made with ❤️ for the smartest sister
+  </div>
+
+  <script>
+    function calculate() {
+      const value = document.getElementById("inputValue").value;
+
+      if (!value.includes(".")) {
+        document.getElementById("output").innerText = "—";
+        return;
+      }
+
+      const parts = value.split(".");
+      const beforeDecimal = parseInt(parts[0], 10);
+      const afterDecimal = parseInt(parts[1], 10);
+
+      if (isNaN(beforeDecimal) || isNaN(afterDecimal)) {
+        document.getElementById("output").innerText = "❌";
+        return;
+      }
+
+      const result = beforeDecimal * 60 + afterDecimal;
+      document.getElementById("output").innerText = result + " 🌟";
+    }
+  </script>
+
+</body>
+</html>

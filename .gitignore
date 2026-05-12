@@ -35,3 +35,6 @@ embedding_model
 # OS
 .DS_Store
 Thumbs.db
+.env
+**/.env
+app/.env
